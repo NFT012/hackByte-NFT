@@ -51,4 +51,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Integration
+    implementation 'com.cloudinary:cloudinary-android:2.2.0'
 }

@@ -8,6 +8,11 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.nft.databinding.ActivityMainBinding
+import com.google.common.net.MediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
 
