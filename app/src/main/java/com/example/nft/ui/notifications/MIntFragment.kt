@@ -13,6 +13,7 @@ class MIntFragment : Fragment() {
 
     private var _binding: FragmentMintBinding? = null
 
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -28,11 +29,14 @@ class MIntFragment : Fragment() {
         _binding = FragmentMintBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        mintViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
+
+
         return root
+    }
+
+    fun validate(): Boolean? {
+        return _binding?.etName?.text?.isEmpty() == true && _binding?.etDesc?.text?.isEmpty() == true && _binding?.etWid?.text?.isEmpty() == true
     }
 
     override fun onDestroyView() {

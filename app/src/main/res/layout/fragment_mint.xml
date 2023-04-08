@@ -1,22 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
     tools:context=".ui.notifications.MIntFragment">
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/tv_titleMint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="MINT YOUR GAMES "
+        android:textStyle="bold"
+        android:textColor="#64B5F6"
+        android:textSize="32sp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/nft_desc"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_margin="12dp"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+        <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NFT name"
+        />
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="game title"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NFT description"
+            />
+        <EditText
+            android:id="@+id/et_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="description"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+        <TextView
+            android:id="@+id/tv_wid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="your wallet ID"
+            />
+        <EditText
+            android:id="@+id/et_wid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="wallet ID"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+        <TextView
+            android:id="@+id/tv_chain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="enter chain"
+            />
+        <EditText
+            android:id="@+id/et_chain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="mumbai"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        >
+        <ImageView
+            android:layout_margin="16dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_cloud_upload_24"
+            />
+        <TextView
+            android:id="@+id/tv_ipfs"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload game GIF to ipfs"
+            />
+    </LinearLayout>
+
+
+   <Button
+       android:id="@+id/btn_mint"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/title_mint"
+       android:backgroundTint="#64B5F6"
+       android:layout_gravity="center"
+       />
+</LinearLayout>
