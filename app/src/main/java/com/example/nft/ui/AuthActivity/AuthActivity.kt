@@ -32,39 +32,8 @@ class AuthActivity : AppCompatActivity() {
             val wid = binding?.etWalletID?.text.toString()
             val username = binding?.etUsername?.text.toString()
 
-            if (wid.isNotEmpty() && username.isNotEmpty()){
-                viewModal.LoginUser(LoginRequest(wid,username))
-            }
+
         }
     }
 
-    fun setObservers(){
-        //SIGN UP
-        viewModal.performLoginStatus.observe(this, Observer { resource ->
-            if (resource != null) {
-                when (resource.status) {
-                    Resource.Status.SUCCESS -> {
-                        if (resource.data != null) {
-                            startActivity(Intent(this,MainActivity::class.java))
-                            finish()
-
-                        } else {
-                            Toast.makeText(
-                                this,
-                                "Something went wrong",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-
-                    Resource.Status.ERROR -> {
-                        Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
-                    }
-                    Resource.Status.LOADING -> {
-                    }
-                    else -> {}
-                }
-            }
-        })
-    }
 }

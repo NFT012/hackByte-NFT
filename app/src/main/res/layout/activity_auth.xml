@@ -60,15 +60,6 @@
             android:textColorHint="@color/black"
             android:inputType="text" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_username"
-        android:backgroundTint="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        android:layout_margin="10dp"
-        android:textColorHint="@color/black"
-        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnSignIn"

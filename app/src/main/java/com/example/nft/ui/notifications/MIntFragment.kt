@@ -60,8 +60,6 @@ class MIntFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val mintViewModel =
-            ViewModelProvider(this).get(MintViewModel::class.java)
 
         _binding = FragmentMintBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -91,8 +89,7 @@ class MIntFragment : Fragment() {
                 e("res:",response.body().toString())
 
                 if(response.isSuccessful){
-//                    cloudURL= response.body()?.url.toString()
-//                _binding?.btnMint?.isEnabled=true
+
                 }
 
             }

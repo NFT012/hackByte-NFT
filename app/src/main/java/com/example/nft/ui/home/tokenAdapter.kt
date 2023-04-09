@@ -33,11 +33,14 @@ class tokenAdapter(private var context : Context, private val tokenList: List<IP
         Glide.with(context).load(ItemsViewModel.ipfsUrl)
             .placeholder(R.drawable.ic_nft_placeholder)
             .into(holder.image)
+
+        holder.date.text = "Data og Creation - " + ItemsViewModel.dateUploaded
     }
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val title: TextView = itemView.findViewById(R.id.TokenName)
         val image: ImageView = itemView.findViewById(R.id.tokenImage)
+        val date : TextView = itemView.findViewById(R.id.TokenDate)
     }
 
 }
