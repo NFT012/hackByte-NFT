@@ -23,8 +23,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var progressDialog: ProgressDialog
     private var tokenList : ArrayList<IPFSFileDetail> = ArrayList()
@@ -51,10 +49,7 @@ class HomeFragment : Fragment() {
         progressDialog = ProgressDialog(requireContext())
         progressDialog.setCancelable(false)
 
-        binding?.rvBlogHome?.let { rv->
-            rv.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
-            rv.adapter = tokenAdapter(requireContext(),tokenList)
-        }
+
     }
 
 
@@ -71,8 +66,11 @@ class HomeFragment : Fragment() {
                                 "NFT ka",
                                 " Data - ${resource.data}"
                             )
-                            Toast.makeText(requireContext(), "Nft Ka Data - ${resource.data}", Toast.LENGTH_LONG).show()
-                            tokenList.addAll(resource.data.ipfs_upload_details.IPFS_file_details)
+                            tokenList.addAll(resource.data.data)
+                            binding?.rvBlogHome?.let { rv->
+                                rv.layoutManager = StaggeredGridLayoutManager(2,LinearLayoutManager.VERTICAL)
+                                rv.adapter = tokenAdapter(requireContext(),tokenList)
+                            }
                             progressDialog.dismiss()
 
                         } else {
@@ -86,7 +84,6 @@ class HomeFragment : Fragment() {
 
                     Resource.Status.ERROR -> {
                         progressDialog.dismiss()
-                        Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show()
                     }
                     Resource.Status.LOADING -> {
                         progressDialog.setMessage("Loading ...")

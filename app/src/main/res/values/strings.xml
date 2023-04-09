@@ -4,4 +4,5 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_mint">Mint</string>
     <string name="nft_desc">Minting an NFT refers to the process of creating a unique digital asset on a blockchain, which helps in creating a verifiable record of your ownership and authenticity, which can be bought, sold, and traded on our marketplaces.</string>
+    <string name="image_contentDescription">Create NFT With us \nFast and Easy</string>
 </resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.AuthActivity.AuthActivity">
+
+
+    <TextView
+        android:id="@+id/tv_app_name_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/intro_screen_title_text_marginTop"
+        android:text="@string/app_name"
+        android:textColor="#10B5E8"
+        android:textSize="@dimen/intro_screen_title_text_size"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/intro_screen_image_marginTop"
+        android:contentDescription="@string/image_contentDescription"
+        android:src="@drawable/verbwire" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/lets_get_started_text_marginTop"
+        android:text="Let's Mint Something"
+        android:textColor="@color/primary_text_color"
+        android:textSize="@dimen/lets_get_started_text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/intro_text_marginStartEnd"
+        android:layout_marginTop="@dimen/intro_text_marginTop"
+        android:layout_marginEnd="@dimen/intro_text_marginStartEnd"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/intro_text_line_spacing_extra"
+        android:text="@string/image_contentDescription"
+        android:textColor="@color/secondary_text_color"
+        android:textSize="25sp" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_walletID"
+            android:backgroundTint="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Wallet  ID"
+            android:layout_margin="10dp"
+            android:textColorHint="@color/black"
+            android:inputType="text" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_username"
+        android:backgroundTint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_margin="10dp"
+        android:textColorHint="@color/black"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_button_rounded"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Sign In" />
+
+
+</LinearLayout>
