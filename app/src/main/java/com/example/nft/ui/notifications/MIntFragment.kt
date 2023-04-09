@@ -14,6 +14,8 @@ import com.cloudinary.android.Logger.e
 import com.example.nft.UploadService
 import com.example.nft.databinding.FragmentMintBinding
 import com.example.nft.ui.MintModel
+import com.example.nft.ui.NftX
+import com.example.nft.ui.nft
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -72,13 +74,27 @@ class MIntFragment : Fragment() {
             var wid=_binding?.etWid?.text?.toString()
             var chain =_binding?.etChain?.text?.toString()
 
-            var mint =MintModel(wid!!, cloudURL,nameNFT!!,chain!!,descNFT!!,"imageNFT")
+            var mint =MintModel(wid!!,cloudURL,nameNFT!!,chain!!,descNFT!!,"imageNFT")
+            var itemNFT= nft(NftX(chain, data = "data",descNFT, cloudURL,nameNFT,wid))
+
+            e("jaane wala data:",itemNFT.toString())
 
 
             val retrofit=Retrofit.Builder().baseUrl("https://nft-mpa0.onrender.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(UploadService::class.java)
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val response= retrofit.createNFT(itemNFT)
+                e("res:",response.body().toString())
+
+                if(response.isSuccessful){
+//                    cloudURL= response.body()?.url.toString()
+//                _binding?.btnMint?.isEnabled=true
+                }
+
+            }
 
 
         }
