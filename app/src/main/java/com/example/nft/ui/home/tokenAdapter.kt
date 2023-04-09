@@ -34,7 +34,7 @@ class tokenAdapter(private var context : Context, private val tokenList: List<IP
             .placeholder(R.drawable.ic_nft_placeholder)
             .into(holder.image)
 
-        holder.date.text = "Data og Creation - " + ItemsViewModel.dateUploaded
+        holder.date.text = "Data of Creation - " + ItemsViewModel.dateUploaded
     }
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {

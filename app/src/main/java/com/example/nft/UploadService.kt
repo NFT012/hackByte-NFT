@@ -1,5 +1,6 @@
 package com.example.nft
 
+import com.example.nft.di.Constants
 import com.example.nft.ui.ImageUrl
 import com.example.nft.ui.MintModel
 import com.example.nft.ui.dashboard.NftDetails
@@ -22,7 +23,7 @@ interface UploadService {
     suspend fun createNFT(@Body nft: nft): Response<QuickMint>
 
     @Headers(
-        "X-API-Key: sk_live_76ec3775-7189-435d-9481-76cdf013e261",
+        Constants.API_KEY,
         "accept: application/json"
     )
     @GET("created")

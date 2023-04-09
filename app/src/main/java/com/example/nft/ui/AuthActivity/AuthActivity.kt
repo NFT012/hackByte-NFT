@@ -10,10 +10,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.nft.databinding.ActivityAuthBinding
 import com.example.nft.di.Resource
+import com.example.nft.di.preferenceHelper
 import com.example.nft.model.LoginRequest
 import com.example.nft.ui.MainActivity
 import com.example.nft.ui.MainViewModal
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.migration.CustomInjection.inject
 
 @AndroidEntryPoint
 class AuthActivity : AppCompatActivity() {
@@ -30,9 +32,11 @@ class AuthActivity : AppCompatActivity() {
 
         binding?.btnSignIn?.setOnClickListener {
             val wid = binding?.etWalletID?.text.toString()
-            val username = binding?.etUsername?.text.toString()
-
-
+            if (wid.isNotEmpty()){
+                preferenceHelper(this).wid = wid
+                startActivity(Intent(this,MainActivity::class.java))
+                finish()
+            }
         }
     }
 
