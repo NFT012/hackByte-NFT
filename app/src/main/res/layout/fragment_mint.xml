@@ -6,32 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="8dp"
+    android:layout_weight="1"
     tools:context=".ui.notifications.MIntFragment">
 
     <TextView
         android:id="@+id/tv_titleMint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MINT YOUR GAMES "
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:text="MINT YOUR NFTs "
         android:textStyle="bold"
         android:textColor="#64B5F6"
         android:textSize="32sp"
         android:layout_margin="8dp"
         android:gravity="center"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/nft_desc"
-        android:textStyle="italic"
-        android:gravity="center"
-        android:layout_margin="12dp"
-        />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+
         >
         <TextView
         android:id="@+id/tv_name"
@@ -50,8 +46,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
         >
         <TextView
             android:id="@+id/tv_desc"
@@ -71,8 +67,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
         >
         <TextView
             android:id="@+id/tv_wid"
@@ -92,8 +88,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+
         >
         <TextView
             android:id="@+id/tv_chain"
@@ -111,15 +108,12 @@
     </LinearLayout>
 
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_margin="8dp"
-        android:padding="8dp"
         >
         <ImageView
             android:id="@+id/iv_upload"
@@ -136,14 +130,39 @@
             android:text="Upload game GIF to ipfs"
             />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btn_ipfs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="create IPFS"
+            android:enabled="false"
+            android:backgroundTint="#64B5F6"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            />
+        <Button
+            android:id="@+id/btn_mint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" MINT"
+            android:enabled="false"
+            android:backgroundTint="#64B5F6"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            />
 
 
-   <Button
-       android:id="@+id/btn_mint"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/title_mint"
-       android:backgroundTint="#64B5F6"
-       android:layout_gravity="center"
-       />
+    </LinearLayout>
+
+
+
+
+
 </LinearLayout>
